@@ -2,62 +2,71 @@
 	<link rel="stylesheet" href="https://www.notion.so/app-21eb0c05ca983c393d67.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script></head>
 <div id="explorerForm">
-     <div class="elementor-row">
-         
-          <ol id="directions">
-
-        <li><strong>Paste in the New Explorer Data Studio Report URL: (required) <br> <span style="font-size: 0.75em">example:
-                    https://datastudio.google.com/u/0/reporting/xxxxxx-31cb-4xxxx-9acf-xxxxxxxx4847/page/q8oSC/edit</span></strong>
-                <input id="report" tabindex="1" type="text" style="width: 100%; line-height: 2em; padding: 0.5em 0.5 em 0.25em" /></p></li>
-                        <li><strong>Hit the 'Tab' key</strong></li></ol></div>
+    
 
     <div class="elementor-row">
           
                       <div class="elementor-column elementor-col-100"  data-element_type="column">
  
-    <p><button class="select" type="button" tabindex="5" style="margin-bottom: 1em">Copy Root Queries</button> <textarea
-            id="root" class="select hiddenTextarea" readonly="readonly" rows="1"  >	</textarea></p></div>
+    <p><button class="select" type="button" tabindex="5" style="margin-bottom: 1em">Copy Organic Search, Organic Social, LLM Leads Page</button> <textarea
+            id="LLMLeadsPage" class="select hiddenTextarea" readonly="readonly" rows="1"  >	</textarea></p>
+		      
+		      <p><button class="select" type="button" tabindex="5" style="margin-bottom: 1em">Copy Organic Search, Organic Social, LLM Traffic Page</button> <textarea
+            id="LLMTrafficPage" class="select hiddenTextarea" readonly="readonly" rows="1"  >	</textarea></p></div>
 	    
 	    <div class="elementor-column elementor-col-100"  data-element_type="column">
  
-    <p><button class="select" type="button" tabindex="5" style="margin-bottom: 1em">Copy FullPath</button> <textarea
-            id="fullPath" class="select hiddenTextarea" readonly="readonly" rows="1"  >	</textarea></p></div>
+    <p><button class="select" type="button" tabindex="5" style="margin-bottom: 1em">channel breakdown - Leads title</button> <textarea
+            id="channelBreakdownTitle" class="select hiddenTextarea" readonly="readonly" rows="1"  >	</textarea></p>
+
+		    <p><button class="select" type="button" tabindex="5" style="margin-bottom: 1em">channel breakdown - Leads formula</button> <textarea
+            id="channelBreakdownFormula" class="select hiddenTextarea" readonly="readonly" rows="1"  >	</textarea></p>
+		    <hr>
+
+
+		        <p><button class="select" type="button" tabindex="5" style="margin-bottom: 1em">channel breakdown - Traffic title</button> <textarea
+            id="channelBreakdownTrafficTitle" class="select hiddenTextarea" readonly="readonly" rows="1"  >	</textarea></p>
+
+		    <p><button class="select" type="button" tabindex="5" style="margin-bottom: 1em">channel breakdown - Traffic formula</button> <textarea
+            id="channelBreakdownTrafficFormula" class="select hiddenTextarea" readonly="readonly" rows="1"  >	</textarea></p>
+	    
+	    
+	    	    <hr>
+
+
+		        <p><button class="select" type="button" tabindex="5" style="margin-bottom: 1em">Copy first User breakdown case statements</button> <textarea
+            id="firstUserbucketedFormulas" class="select hiddenTextarea" readonly="readonly" rows="1"  >	</textarea></p>
+<hr>
+
+
+
+
+
+		        <p><button class="select" type="button" tabindex="5" style="margin-bottom: 1em">Copy Gen AI breakdown - Leads title</button> <textarea
+            id="genAIBreakdownLeadsTitle" class="select hiddenTextarea" readonly="readonly" rows="1"  >	</textarea></p>
+
+		    <p><button class="select" type="button" tabindex="5" style="margin-bottom: 1em">Copy Gen AI breakdown - Leads formula</button> <textarea
+            id="genAIBreakdownLeadsFormula" class="select hiddenTextarea" readonly="readonly" rows="1"  >	</textarea></p>
+	    
+	<hr>
+
+
+
+
+
+		        <p><button class="select" type="button" tabindex="5" style="margin-bottom: 1em">Copy Gen AI breakdown - Traffic title</button> <textarea
+            id="genAIBreakdownTrafficTitle" class="select hiddenTextarea" readonly="readonly" rows="1"  >	</textarea></p>
+
+		    <p><button class="select" type="button" tabindex="5" style="margin-bottom: 1em">Copy Gen AI breakdown - Leads formula</button> <textarea
+            id="genAIBreakdownTrafficFormula" class="select hiddenTextarea" readonly="readonly" rows="1"  >	</textarea></p>    
+	    
+	    
+	    
+	    
+	    </div>
 	    
 
-	     <div class="elementor-column elementor-col-100"  data-element_type="column">
- 
-    <p><button class="select" type="button" tabindex="5" style="margin-bottom: 1em">Copy Trending Queries</button> <textarea
-            id="trending" class="select hiddenTextarea" readonly="readonly" rows="1"  >	</textarea></p></div>
-            
-            <div class="elementor-column elementor-col-100"  data-element_type="column">
-    
-    <p><button class="select" type="button" tabindex="5" style="margin-bottom: 1em">Copy Trending Pages</button> <textarea
-            id="pageexplorer" class="select hiddenTextarea" readonly="readonly" rows="1" >	</textarea></p></div></div>
-            
-
-              <div class="elementor-row">           <div class="elementor-column elementor-col-100"  data-element_type="column"> 
-     <p><button class="select" type="button" tabindex="8" style="margin-bottom: 1em">Copy Check Serps</button> <textarea
-            id="checkSerps" class="select hiddenTextarea" readonly="readonly" rows="1">HYPERLINK(CONCAT("https://google.com/search?q=",REGEXP_REPLACE(query,' ','+')),"🔎SERPS")</textarea></p>
-
-</div>
-<div class="elementor-column elementor-col-100"  data-element_type="column">
-      
-       
-     <p><button class="select" type="button" tabindex="10" style="margin-bottom: 1em">Copy Image Serps</button> <textarea
-            id="checkQuora" class="select hiddenTextarea" readonly="readonly" rows="1" >HYPERLINK(CONCAT("https://google.com/search?q=",REGEXP_REPLACE(Query,' ','+'),"&tbm=isch"),"🔎Images")</textarea></p>
-       </div>
-
-      <div class="elementor-column elementor-col-100"  data-element_type="column">   
-     <p><button class="select" type="button" tabindex="10" style="margin-bottom: 1em">Copy Quora</button> <textarea
-            id="checkQuora" class="select hiddenTextarea" readonly="readonly" rows="1" >HYPERLINK(CONCAT("https://www.quora.com/search?q=",REGEXP_REPLACE(query,' ','%20')),IMAGE("https://upload.wikimedia.org/wikipedia/commons/2/2c/Quora_icon.png","Q"))</textarea></p>
-
-</div> 
-
-<div class="elementor-column elementor-col-100"  data-element_type="column">   
-     <p><button class="select" type="button" tabindex="9" style="margin-bottom: 1em">Copy Reddit</button> <textarea
-            id="checkReddit" class="select hiddenTextarea" readonly="readonly"  rows="1">HYPERLINK(CONCAT("https://www.reddit.com/search/?q=",REGEXP_REPLACE(query,' ','%20')),IMAGE("https://external-preview.redd.it/iDdntscPf-nfWKqzHRGFmhVxZm4hZgaKe5oyFws-yzA.png?auto=webp&s=38648ef0dc2c3fce76d5e1d8639234d8da0152b2","Q"))</textarea></p>
-
-</div>
+	
 
 </div>
 
@@ -107,32 +116,23 @@ let name = $(this).html();
 
             function update() {
 
-                var reportUrl = $("#report").val() ? $("#report").val().trim() : '';
-
-                var reportId = reportUrl.split('reporting/')[1].split('/page/')[0];
-                console.log(reportId);
-
-                var rootLink =
-                    `HYPERLINK(CONCAT('https://datastudio.google.com/reporting/${reportId}/page/d6pSC?params=%7B"df845":"include%25EE%2580%25800%25EE%2580%2580PT%25EE%2580%2580',Query ,'"%7D'),Query)`;
-                console.log(trendingLink);
-		    
-		    
-		    var trendingLink =
-                    `HYPERLINK(CONCAT('https://datastudio.google.com/reporting/${reportId}/page/d6pSC?params=%7B"df845":"include%25EE%2580%25800%25EE%2580%2580EQ%25EE%2580%2580',Query ,'"%7D'),'Explore the Selected Query in Topic Explorer')`;
-                console.log(trendingLink);
-                var pageExplorerLink = `HYPERLINK(CONCAT('https://datastudio.google.com/reporting/${reportId}/page/p_g7lfzjqrrc?params=%7B"df336":"include%25EE%2580%25800%25EE%2580%2580EQ%25EE%2580%2580',Page ,'"%7D'),'Explore the selected Page in Page Explorer')`;
-
-                var fullPathLink = `HYPERLINK(CONCAT('https://datastudio.google.com/reporting/${reportId}/page/p_g7lfzjqrrc?params=%7B"df336":"include%25EE%2580%25800%25EE%2580%2580EQ%25EE%2580%2580',Page ,'"%7D'),FullPath)`;
-                    
-                console.log(trendingLink);
-                var pageExplorerLink = `HYPERLINK(CONCAT('https://datastudio.google.com/reporting/${reportId}/page/p_g7lfzjqrrc?params=%7B"df336":"include%25EE%2580%25800%25EE%2580%2580EQ%25EE%2580%2580',Page ,'"%7D'),'Explore the selected Page in Page Explorer')`;
 
               
 
- 		$('textarea#root').text(rootLink);        
-		$('textarea#fullPath').text(fullPathLink);
-                $('textarea#trending').text(trendingLink);
+ 		$('textarea#LLMLeadsPage').text(rootLink);        
+		$('textarea#LLMTrafficPage').text(fullPathLink);
+                $('textarea#channelBreakdownTitle').text(trendingLink);
 		$('textarea#pageexplorer').text(pageExplorerLink);
+
+
+		    $('textarea#pageexplorer').text(pageExplorerLink);
+		    $('textarea#pageexplorer').text(pageExplorerLink);
+		    $('textarea#pageexplorer').text(pageExplorerLink);
+		    $('textarea#pageexplorer').text(pageExplorerLink);
+		    $('textarea#pageexplorer').text(pageExplorerLink);
+		    $('textarea#pageexplorer').text(pageExplorerLink);
+		    $('textarea#pageexplorer').text(pageExplorerLink);
+		    $('textarea#pageexplorer').text(pageExplorerLink);
 
             };
             $("input").on("change", function () {
