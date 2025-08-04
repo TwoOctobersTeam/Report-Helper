@@ -114,28 +114,85 @@ let name = $(this).html();
                 $(this).html("✅ " + name);
             });
 
+
+                 let LLMLeadsPagelink = `Organic Search, Organic Social, LLM Leads`;
+		let LLMTrafficPagelink = `Organic Search, Organic Social, LLM Traffic`;
+
+		let channelBreakdownTitlelink = `channel breakdown - Leads`;
+		let channelBreakdownFormulalink = `CASE
+WHEN REGEXP_MATCH(first user bucketed source / medium, "(?i).*(ChatGPT|Claude|Gemini|Perplexity).*") THEN "Gen AI"
+WHEN REGEXP_MATCH(first user bucketed source / medium, "(?i).*(Reddit|Twitter|Facebook|Instagram|BSky|Pinterest|Linkedin).*") THEN "Organic Social"
+WHEN REGEXP_MATCH(first user bucketed source / medium, "(?i).*(GBP|Google Organic).*") THEN "Organic Search"
+WHEN REGEXP_MATCH(first user bucketed source / medium, "(?i)(.*duckduckgo.*|.*yahoo.*|.*bing.*) / organic") THEN "Other Organic Search"
+WHEN REGEXP_MATCH(first user bucketed source / medium, "(?i).*(YouTube|Vimeo).*") THEN "Organic Video"
+WHEN REGEXP_MATCH(first user bucketed source / medium, "(?i).*(Google Ads|Google LSA).*") THEN "Paid Google Ads / LSA"
+END`;
+		let channelBreakdownTrafficTitlelink = `channel breakdown - Traffic`;
+
+
+		let channelBreakdownTrafficFormulalink = `CASE
+WHEN Event name = "session_start" AND REGEXP_MATCH(Session source / medium, "(?i).*(chatgpt|gemini|claude|perplexity).*") THEN "Gen AI"
+WHEN (Event name = "session_start"
+AND REGEXP_MATCH(Session source / medium, "(?i).*(GBP|Google.*Organic|GMB|search.*google).*") AND REGEXP_MATCH(Session campaign, "(?i).*(gmb|gbp).*")) OR 
+(Event name = "session_start"
+AND REGEXP_MATCH(Session source / medium, "(?i).*(GBP|Google Organic|GMB|search.*google).*")) THEN "Organic Search"
+WHEN Event name = "session_start" AND REGEXP_MATCH(Session source / medium, "(?i).*(Reddit|Twitter|Facebook|Instagram|Bsky|Pinterest|Linkedin).*") THEN "Organic Social"
+ WHEN Event name = "session_start" AND REGEXP_MATCH(Session source / medium, "(?i).*(youtube|vimeo).*") THEN "Organic Video"
+END`;
+
+		let firstUserbucketedFormulaslink = `WHEN REGEXP_MATCH(First user source / medium, "(?i).*copilot\\.microsoft.*") THEN "Copilot"
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*github\\.com.*") THEN "Github"
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*youtube.*") THEN "YouTube"
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*vimeo.*") THEN "Vimeo"
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*reddit.*") THEN "Reddit"
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*chatgpt.*") THEN "ChatGPT"
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*t\\.co.*|.*twitter.*") THEN "Twitter / X"
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*facebook.*") THEN "Facebook"
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*instagram.*") THEN "Instagram"
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*pinterest.*") THEN "Pinterest"
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*bsky.*") THEN "Blue Sky"
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*perplexity.*") THEN "Perplexity"
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*gemini\\.google.*") THEN "Gemini"
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*notebooklm\\.google.*") THEN "Notebooklm"
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*claude.*") THEN "Claude"
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*deepseek.*") THEN "Deepseek"
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*poe\\.com.*") THEN "Poe"
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*Yandex.*") THEN "Yandex"
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*search\\.brave.*") THEN "Brave"`;
+
+		let genAIBreakdownLeadsTitlelink = `Gen AI breakdown - Leads`;
+
+		let genAIBreakdownLeadsFormulalink = `CASE
+  WHEN REGEXP_MATCH(first user bucketed source / medium, "(?i).*(chatgpt).*") THEN "Chat GPT"
+  WHEN REGEXP_MATCH(first user bucketed source / medium, "(?i).*(claude).*") THEN "Claude"
+  WHEN REGEXP_MATCH(first user bucketed source / medium, "(?i).*(gemini).*") THEN "Gemini"
+  WHEN REGEXP_MATCH(first user bucketed source / medium, "(?i).*(perplexity).*") THEN "Perplexity"
+END`;
+		let genAIBreakdownTrafficTitlelink = `Gen AI breakdown - Traffic`;
+
+		let genAIBreakdownTrafficFormulalink = `CASE
+  WHEN Event name = "session_start" AND REGEXP_MATCH(Session source / medium, "(?i).*(chatgpt).*") THEN "Chat GPT"
+  WHEN Event name = "session_start"
+AND REGEXP_MATCH(Session source / medium, "(?i).*(claude).*") THEN "Claude"
+  WHEN Event name = "session_start" AND REGEXP_MATCH(Session source / medium, "(?i).*(gemini).*") THEN "Gemini"
+  WHEN Event name = "session_start"
+AND REGEXP_MATCH(Session source / medium, "(?i).*(perplexity).*") THEN "Perplexity"
+END`;
+		
             function update() {
-
-
-              
-
- 		$('textarea#LLMLeadsPage').text(rootLink);        
-		$('textarea#LLMTrafficPage').text(fullPathLink);
-                $('textarea#channelBreakdownTitle').text(trendingLink);
-		$('textarea#pageexplorer').text(pageExplorerLink);
-
-
-		    $('textarea#pageexplorer').text(pageExplorerLink);
-		    $('textarea#pageexplorer').text(pageExplorerLink);
-		    $('textarea#pageexplorer').text(pageExplorerLink);
-		    $('textarea#pageexplorer').text(pageExplorerLink);
-		    $('textarea#pageexplorer').text(pageExplorerLink);
-		    $('textarea#pageexplorer').text(pageExplorerLink);
-		    $('textarea#pageexplorer').text(pageExplorerLink);
-		    $('textarea#pageexplorer').text(pageExplorerLink);
-
+ 		$('textarea#LLMLeadsPage').text(LLMLeadsPagelink);        
+		$('textarea#LLMTrafficPage').text(LLMTrafficPagelink);
+                $('textarea#channelBreakdownTitle').text(channelBreakdownTitlelink);
+		$('textarea#channelBreakdownFormula').text(channelBreakdownFormulalink);
+		$('textarea#channelBreakdownTrafficTitle').text(channelBreakdownTrafficTitlelink);
+		$('textarea#channelBreakdownTrafficFormula').text(channelBreakdownTrafficFormulalink);
+		$('textarea#firstUserbucketedFormulas').text(firstUserbucketedFormulaslink);
+		$('textarea#genAIBreakdownLeadsTitle').text(genAIBreakdownLeadsTitlelink);
+		$('textarea#genAIBreakdownLeadsFormula').text(genAIBreakdownLeadsFormulalink);
+		$('textarea#genAIBreakdownTrafficTitle').text(genAIBreakdownTrafficTitlelink);
+		$('textarea#genAIBreakdownTrafficFormula').text(genAIBreakdownTrafficFormulalink);
             };
-            $("input").on("change", function () {
+            $(document).ready() {
 
                 update();
 
