@@ -145,25 +145,25 @@ WHEN Event name = "session_start" AND REGEXP_MATCH(Session source / medium, "(?i
  WHEN Event name = "session_start" AND REGEXP_MATCH(Session source / medium, "(?i).*(youtube|vimeo).*") THEN "Organic Video"
 END`;
 
-		let firstUserbucketedFormulaslink = `WHEN REGEXP_MATCH(First user source / medium, "(?i).*copilot\\.microsoft.*") THEN "Copilot"
-WHEN REGEXP_MATCH(First user source / medium, "(?i).*github\\.com.*") THEN "Github"
+		let firstUserbucketedFormulaslink = `let firstUserbucketedFormulaslink = `WHEN REGEXP_MATCH(First user source / medium, "(?i).*copilot\\\\.microsoft.*") THEN "Copilot"
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*github\\\\.com.*") THEN "Github"
 WHEN REGEXP_MATCH(First user source / medium, "(?i).*youtube.*") THEN "YouTube"
 WHEN REGEXP_MATCH(First user source / medium, "(?i).*vimeo.*") THEN "Vimeo"
 WHEN REGEXP_MATCH(First user source / medium, "(?i).*reddit.*") THEN "Reddit"
 WHEN REGEXP_MATCH(First user source / medium, "(?i).*chatgpt.*") THEN "ChatGPT"
-WHEN REGEXP_MATCH(First user source / medium, "(?i).*t\\.co.*|.*twitter.*") THEN "Twitter / X"
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*t\\\\.co.*|.*twitter.*") THEN "Twitter / X"
 WHEN REGEXP_MATCH(First user source / medium, "(?i).*facebook.*") THEN "Facebook"
 WHEN REGEXP_MATCH(First user source / medium, "(?i).*instagram.*") THEN "Instagram"
 WHEN REGEXP_MATCH(First user source / medium, "(?i).*pinterest.*") THEN "Pinterest"
 WHEN REGEXP_MATCH(First user source / medium, "(?i).*bsky.*") THEN "Blue Sky"
 WHEN REGEXP_MATCH(First user source / medium, "(?i).*perplexity.*") THEN "Perplexity"
-WHEN REGEXP_MATCH(First user source / medium, "(?i).*gemini\\.google.*") THEN "Gemini"
-WHEN REGEXP_MATCH(First user source / medium, "(?i).*notebooklm\\.google.*") THEN "Notebooklm"
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*gemini\\\\.google.*") THEN "Gemini"
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*notebooklm\\\\.google.*") THEN "Notebooklm"
 WHEN REGEXP_MATCH(First user source / medium, "(?i).*claude.*") THEN "Claude"
 WHEN REGEXP_MATCH(First user source / medium, "(?i).*deepseek.*") THEN "Deepseek"
-WHEN REGEXP_MATCH(First user source / medium, "(?i).*poe\\.com.*") THEN "Poe"
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*poe\\\\.com.*") THEN "Poe"
 WHEN REGEXP_MATCH(First user source / medium, "(?i).*Yandex.*") THEN "Yandex"
-WHEN REGEXP_MATCH(First user source / medium, "(?i).*search\\.brave.*") THEN "Brave"`;
+WHEN REGEXP_MATCH(First user source / medium, "(?i).*search\\\\.brave.*") THEN "Brave"`;`;
 
 		let genAIBreakdownLeadsTitlelink = `Gen AI breakdown - Leads`;
 
