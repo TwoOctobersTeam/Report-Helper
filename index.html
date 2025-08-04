@@ -145,7 +145,7 @@ WHEN Event name = "session_start" AND REGEXP_MATCH(Session source / medium, "(?i
  WHEN Event name = "session_start" AND REGEXP_MATCH(Session source / medium, "(?i).*(youtube|vimeo).*") THEN "Organic Video"
 END`;
 
-		let firstUserbucketedFormulaslink = `let firstUserbucketedFormulaslink = `WHEN REGEXP_MATCH(First user source / medium, "(?i).*copilot\\\\.microsoft.*") THEN "Copilot"
+		let firstUserbucketedFormulaslink = `WHEN REGEXP_MATCH(First user source / medium, "(?i).*copilot\\\\.microsoft.*") THEN "Copilot"
 WHEN REGEXP_MATCH(First user source / medium, "(?i).*github\\\\.com.*") THEN "Github"
 WHEN REGEXP_MATCH(First user source / medium, "(?i).*youtube.*") THEN "YouTube"
 WHEN REGEXP_MATCH(First user source / medium, "(?i).*vimeo.*") THEN "Vimeo"
